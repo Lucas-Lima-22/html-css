@@ -13,7 +13,8 @@
         table{
             width: 500px;
             border-collapse: collapse;
-            background-color: #f8f9fa;
+            background-color: white;
+            position: relative;
         }
 
         td, th{
@@ -22,13 +23,24 @@
         }
 
         thead, tfoot{
-            background-color: #eaecf0;
-            color: black;
+            background-color: grey;
+            color: white;
+        }
+
+        thead > tr > th{
+            position: sticky;
+            top: -1px;
+            background-color: grey;
+        }
+
+        tbody > tr:nth-child(odd){
+            background-color: lightgray;
         }
 
         td.num{
             text-align: right;
         }
+
     </style>
 </head>
 <body>
@@ -36,8 +48,8 @@
     <table>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col">População</th>
             </tr>
         </thead>
         <tbody>
@@ -152,7 +164,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th>
                 <td class="num">213.317.639</td>
             </tr>
         </tfoot>
